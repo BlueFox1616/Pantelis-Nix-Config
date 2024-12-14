@@ -7,25 +7,24 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nixcord.url = "github:kaylorben/nixcord";
 
-
-   
-   spicetify-nix = {
+    spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-   };
-    
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    gitwatch.url = "github:gitwatch/gitwatch";  # Add this line for Gitwatch
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs: 
-  
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, gitwatch, ... }@inputs:
+
   let
     system = "x86_64-linux";
-   in {
-    
+  in {
     # nixos - system hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 
@@ -34,8 +33,9 @@
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs system;  
+        inherit inputs system;
       };
+
       modules = [
         ./configuration.nix
         inputs.spicetify-nix.nixosModules.default
@@ -44,13 +44,22 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.pantelis = import ./home-manager/home.nix;
-          
+
           home-manager.sharedModules = [
             inputs.nixcord.homeManagerModules.nixcord
-            ]; 
+          ];
+        }
+
+        # Enable gitwatch as a service
+        {
+          services.gitwatch.my-service-name = {  # Replace 'my-service-name' with your actual service name
+            enable = true;
+            path = "/etc/nixos";  # Adjust the path as needed
+            remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";  # Adjust with your repository URL
+            user = "root";  # The user to run the service under
+          };
         }
       ];
-
     };
   };
 }

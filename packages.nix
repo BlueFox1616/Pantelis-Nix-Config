@@ -23,7 +23,6 @@
     pkgs.gnome-software
     pkgs.bottles
     pkgs.libreoffice-qt6-fresh
-    pkgs.chiaki
     pkgs.git
     pkgs.kitty
     inputs.zen-browser.packages."${system}".default
@@ -43,6 +42,7 @@
     pkgs.roboto
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-cursors
+    pkgs.inotify-tools
 
     #Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
