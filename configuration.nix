@@ -43,20 +43,22 @@
   # Enable SSH and SSH agent
   services.openssh.enable = true;
 
-  # Configure the user with the proper shell
+  # Configure the user with the proper shell and authorized SSH keys
   users.users.pantelis = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];  # Modify groups based on your user setup
     shell = pkgs.zsh;  # Modify to your preferred shell if needed
+    sshAuthorizedKeys = [
+      "/home/pantelis/.ssh/id_rsa.pub"  # Add your public key here
+    ];
   };
 
-  # Configure SSH with the correct public/private keys
+  # Configure SSH agent
   programs.ssh = {
     startAgent = true;
     extraConfig = ''
       IdentityFile /home/pantelis/.ssh/id_rsa  # Specify the private key
     '';
-    authorizedKeys = [ "/home/pantelis/.ssh/id_rsa.pub" ];  # Add your public key here
   };
 }
 
