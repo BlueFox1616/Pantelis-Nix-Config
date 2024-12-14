@@ -6,6 +6,7 @@
     ./user.nix
     ./xserver.nix
     ./spicetify.nix
+    ./git.nix
   ];
 }
 
