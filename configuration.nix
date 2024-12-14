@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }:  # Import pkgs and inputs for usage
+{ config, pkgs, ... }:  # pkgs is passed from flake.nix
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
       ./packages.nix
       ./modules/bundle.nix
@@ -57,13 +57,6 @@
       IdentityFile /home/pantelis/.ssh/id_rsa  # Specify the private key
     '';
     authorizedKeys = [ "/home/pantelis/.ssh/id_rsa.pub" ];  # Add your public key here
-  };
-
-  # Import inputs for any external modules or packages
-  inputs = {
-    # Example: You could include flake inputs here
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    # Other external inputs can be added as needed
   };
 }
 
