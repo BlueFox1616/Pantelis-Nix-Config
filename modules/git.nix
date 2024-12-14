@@ -8,7 +8,7 @@
     shell = "${pkgs.git}/bin/git-shell";  # Set the login shell to git-shell
     openssh.authorizedKeys.keys = [
       # SSH public keys of authorized users
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF38sHxXn/r7KzWL1BVCqcKqmZA/V76N/y5p52UQghw7 example"
+      "SHA256:hdUur7HF5CmucJBX7+4HtANpElAKpjkzqgpabSIfLjQ"
     ];
   };
 
