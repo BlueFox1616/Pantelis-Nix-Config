@@ -31,8 +31,7 @@
     pkgs.stremio
     #Other
     pkgs.imagemagick
-    pkgs.whitesur-icon-theme
-    pkgs.variety    
+    pkgs.whitesur-icon-theme    
     pkgs.python3
     pkgs.python312Packages.requests
     pkgs.gtk4
