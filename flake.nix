@@ -57,6 +57,7 @@
             path = "/etc/nixos";  # Adjust the path as needed
             remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";  # Adjust with your repository URL
             user = "pantelis";  # The user to run the service under
+            branch = "main";
           };
         }
       ];
