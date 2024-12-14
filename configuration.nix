@@ -1,4 +1,4 @@
-{ pkgs, ... }:  # Import pkgs and inputs for usage
+{ pkgs, inputs, ... }:  # Import pkgs and inputs for usage
 
 {
   imports =
