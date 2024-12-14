@@ -31,7 +31,8 @@
     pkgs.stremio
     #Other
     pkgs.imagemagick
-    pkgs.whitesur-icon-theme    
+    pkgs.whitesur-icon-theme
+    pkgs.variety    
     pkgs.python3
     pkgs.python312Packages.requests
     pkgs.gtk4
@@ -51,13 +52,11 @@
     pkgs.gnomeExtensions.compiz-windows-effect
     pkgs.gnomeExtensions.panel-corners
     pkgs.gnomeExtensions.fullscreen-to-empty-workspace
-    pkgs.gnomeExtensions.logo-menu
     pkgs.gnomeExtensions.just-perfection
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.battery-time-2
     pkgs.gnomeExtensions.battery-time
-    pkgs.gnomeExtensions.x11-gestures
     pkgs.gnomeExtensions.dash-to-dock
   ];
 }
