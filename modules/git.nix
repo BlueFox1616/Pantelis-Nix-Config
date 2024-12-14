@@ -10,8 +10,8 @@ in {
 
   # Configure Git
   git = {
-    userName = BlueFox1616 ;
-    userEmail = pantvch@gmail.com;
+    userName = "BlueFox1616";
+    userEmail = "pantvch@gmail.com";
   };
 
   # Enable SSH for GitHub access (ensure the correct SSH key is available)
