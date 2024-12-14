@@ -1,28 +1,39 @@
-{ config, pkgs, ... }:  # pkgs is passed from flake.nix
+# Edit this configuration file to define what should be installed on
+# your system. Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ inputs, ... }:
 
 {
   imports =
-    [
+    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
       ./modules/bundle.nix
     ];
 
-  # Bootloader
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.auto-optimise-store = true;
   programs.dconf.enable = true;
 
-  # Networking
-  networking.hostName = "nixos"; # Define your hostname
+
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Timezone and Locale settings
+
+  # Set your time zone.
   time.timeZone = "Europe/Athens";
+  
+
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "el_GR.UTF-8";
     LC_IDENTIFICATION = "el_GR.UTF-8";
@@ -35,30 +46,10 @@
     LC_TIME = "el_GR.UTF-8";
   };
 
-  # Enable printing services
+  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  system.stateVersion = "24.05";  # Ensure compatibility with your system setup
 
-  # Enable SSH and SSH agent
-  services.openssh.enable = true;
-
-  # Configure the user with the proper shell and authorized SSH keys
-  users.users.pantelis = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];  # Modify groups based on your user setup
-    shell = pkgs.zsh;  # Modify to your preferred shell if needed
-    sshAuthorizedKeys = [
-      "/home/pantelis/.ssh/id_rsa.pub"  # Add your public key here
-    ];
-  };
-
-  # Configure SSH agent
-  programs.ssh = {
-    startAgent = true;
-    extraConfig = ''
-      IdentityFile /home/pantelis/.ssh/id_rsa  # Specify the private key
-    '';
-  };
+  system.stateVersion = "24.05"; # Did you read the comment?
 }
 
