@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:  # Import pkgs to access package set
+{ inputs, pkgs, ... }:  # Import pkgs and inputs for usage
 
 {
   imports =
@@ -8,22 +8,20 @@
       ./modules/bundle.nix
     ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.auto-optimise-store = true;
   programs.dconf.enable = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Networking
+  networking.hostName = "nixos"; # Define your hostname
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Timezone and Locale settings
   time.timeZone = "Europe/Athens";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "el_GR.UTF-8";
@@ -37,25 +35,35 @@
     LC_TIME = "el_GR.UTF-8";
   };
 
-  # Enable CUPS to print documents.
+  # Enable printing services
   services.printing.enable = true;
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";  # Ensure compatibility with your system setup
 
   # Enable SSH and SSH agent
   services.openssh.enable = true;
-  
-  # Configure your user
+
+  # Configure the user with the proper shell
   users.users.pantelis = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];  # Modify based on your user setup
-    shell = pkgs.zsh;  # Change to your preferred shell if needed
-    sshKeys = [
-      "/home/pantelis/.ssh/id_rsa.pub" # Path to your public SSH key
-    ];
+    extraGroups = [ "wheel" ];  # Modify groups based on your user setup
+    shell = pkgs.zsh;  # Modify to your preferred shell if needed
   };
 
-  # Start SSH agent for key management
-  programs.ssh.startAgent = true;
+  # Configure SSH with the correct public/private keys
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = ''
+      IdentityFile /home/pantelis/.ssh/id_rsa  # Specify the private key
+    '';
+    authorizedKeys = [ "/home/pantelis/.ssh/id_rsa.pub" ];  # Add your public key here
+  };
+
+  # Import inputs for any external modules or packages
+  inputs = {
+    # Example: You could include flake inputs here
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    # Other external inputs can be added as needed
+  };
 }
 
