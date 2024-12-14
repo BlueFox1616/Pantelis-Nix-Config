@@ -51,5 +51,23 @@
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
+  # In /etc/nixos/configuration.nix
+
+# Enable SSH
+services.openssh.enable = true;
+
+# Add SSH key to the SSH agent
+users.users.pantelis = {
+  isNormalUser = true;
+  extraGroups = [ "wheel" ]; # Modify based on your user setup
+  shell = pkgs.zsh; # Modify your preferred shell if needed
+  sshKeys = [
+    "/home/pantelis/.ssh/id_rsa" # Path to your private SSH key
+  ];
+};
+
+# You can also configure a key for GitHub:
+programs.ssh.startAgent = true;
+
 }
 
