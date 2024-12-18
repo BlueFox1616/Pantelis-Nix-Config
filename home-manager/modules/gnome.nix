@@ -18,9 +18,9 @@
         "compiz-alike-magic-lamp-effect@hermes83.github.com"
         "compiz-windows-effect@hermes83.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
-        "pkgs.gnomeExtensions.media-controls.extensionUuid"
-        "pkgs.gnomeExtensions.search-light.extensionUuid"
-        "pkgs.gnomeExtensions.pano.extensionUuid"
+        "mediacontrols@cliffniff.github.com"
+        "search-light@icedman.github.com"
+        "pano@elhan.io"
       ];
     };
   };
