@@ -21,6 +21,7 @@
         "mediacontrols@cliffniff.github.com"
         "pano@elhan.io"
         "rounded-window-corners@fxgn"
+        "panel-corners@aunetx"
       ];
     };
   };
