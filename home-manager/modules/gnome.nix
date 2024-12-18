@@ -19,7 +19,6 @@
         "compiz-windows-effect@hermes83.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "mediacontrols@cliffniff.github.com"
-        "search-light@icedman.github.com"
         "pano@elhan.io"
       ];
     };
