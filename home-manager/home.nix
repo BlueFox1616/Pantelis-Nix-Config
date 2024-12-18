@@ -8,12 +8,9 @@
     username = "pantelis";
     homeDirectory = "/home/pantelis";
     stateVersion = "23.11";
-  };
-
-  # List of packages, including neofetch
-  home.packages = with pkgs; [
-    neofetch
-  ];
+    packages = with pkgs; [
+      neofetch
+    ];
   };
 }
 
