@@ -1,24 +1,35 @@
-{ pkgs, inputs, ... }: {  
+{ pkgs, inputs, ... }: {
   # Install firefox.
   programs.firefox.enable = true;
   services.flatpak.enable = true;
   # For localsend to be able to receive files
   networking.firewall.allowedTCPPorts = [ 53317 ];
   networking.firewall.allowedUDPPorts = [ 53317 ];
+
+  # Allow TCP/UDP port ranges for KDE Connect
+  networking.firewall.allowedTCPPortRanges = [
+    { from = 1714; to = 1764; }
+  ];
+  networking.firewall.allowedUDPPortRanges = [
+    { from = 1714; to = 1764; }
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowBroken = true;
   services.foldingathome.enable = true;
   nixpkgs.config.allowUnfree = true;
   programs.hyprland.enable = true; # enable Hyprland
+
   programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  localNetworkGameTransfers.openFirewall = true;
-  };# Open ports in the firewall for Steam Local Netwo
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
   # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
-    #Gui Apps
+    # Gui Apps
     pkgs.gnome-tweaks
     pkgs.gnome-software
     pkgs.bottles
@@ -30,7 +41,7 @@
     pkgs.lutris
     pkgs.stremio
     pkgs.gradience
-    #Other
+    # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
     pkgs.python3
@@ -43,7 +54,7 @@
     pkgs.whitesur-cursors
     pkgs.inotify-tools
     pkgs.p7zip
-    #Gnome Extensions
+    # Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
     pkgs.gnomeExtensions.freon
     pkgs.gnomeExtensions.blur-my-shell    
@@ -63,3 +74,4 @@
     pkgs.gnomeExtensions.gsconnect
   ];
 }
+
