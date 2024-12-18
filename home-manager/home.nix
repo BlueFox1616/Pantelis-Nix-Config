@@ -16,7 +16,7 @@
   ];
 
   # Enable GTK
-  programs.gtk = {
+  gtk = {
     enable = true;
   };
 }
