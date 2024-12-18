@@ -58,5 +58,6 @@
     pkgs.gnomeExtensions.pano
     pkgs.gnomeExtensions.media-controls
     pkgs.gnomeExtensions.rounded-window-corners-reborn
+    pkgs.gnomeExtensions.panel-corners
   ];
 }
