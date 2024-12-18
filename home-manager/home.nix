@@ -1,10 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  imports = [
-    ./modules/bundle.nix
-  ];
-
   home = {
     username = "pantelis";
     homeDirectory = "/home/pantelis";
@@ -14,16 +10,9 @@
       neofetch
     ];
 
-    gtk = {
-      enable = true;
-      theme = {
-        name = "WhiteSur-dark";
-        package = pkgs.whitesur-gtk-theme;
-      };
-      iconTheme = {
-        name = "WhiteSur";
-        package = pkgs.whitesur-icon-theme;
-      };
+    environment.variables = {
+      GTK_THEME = "WhiteSur-dark";
+      GTK_ICON_THEME = "WhiteSur";
     };
   };
 }
