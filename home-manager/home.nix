@@ -10,6 +10,7 @@
 
     packages = with pkgs; [
       neofetch
+      # Add any other packages here if needed
     ];
 
     gtk = {
@@ -28,6 +29,7 @@
 
     packages = with pkgs; [
       neofetch
+      # Add any other packages here if needed
     ];
 
     gtk = {
