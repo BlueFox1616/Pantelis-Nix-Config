@@ -10,9 +10,6 @@
       neofetch
     ];
 
-    environment.variables = {
-      GTK_THEME = "WhiteSur-dark";
-      GTK_ICON_THEME = "WhiteSur";
     };
   };
 }
