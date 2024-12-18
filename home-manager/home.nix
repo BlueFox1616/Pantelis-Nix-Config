@@ -1,25 +1,43 @@
-{ pkgs, config, ... }:
+{ pkgs, config, ... }: {
 
-{
   imports = [
-    ./modules/bundle.nix
+    ./home.nix
   ];
 
-  home = {
-    username = "pantelis";
+  home-manager.users.pantelis = {
     homeDirectory = "/home/pantelis";
     stateVersion = "23.11";
+
+    packages = with pkgs; [
+      neofetch
+    ];
+
+    gtk = {
+      enable = true;
+      theme = {
+        name = "WhiteSur";
+        package = pkgs.whitesur-gtk-theme;
+      };
+    };
   };
 
-  home.packages = with pkgs; [
-    neofetch
-  ];
+  # If you have other users, you can define them here similarly
+  home-manager.users.pantelis = {
+    homeDirectory = "/home/pantelis";
+    stateVersion = "23.11";
 
-  # Enable GTK with WhiteSur theme
-  programs.gtk.enable = true;
-  programs.gtk.theme = {
-    name = "WhiteSur";
-    package = pkgs.whitesur-gtk-theme;
+    packages = with pkgs; [
+      neofetch
+    ];
+
+    gtk = {
+      enable = true;
+      theme = {
+        name = "WhiteSur";
+        package = pkgs.whitesur-gtk-theme;
+      };
+    };
   };
+
 }
 
