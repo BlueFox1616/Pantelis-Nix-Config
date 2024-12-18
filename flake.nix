@@ -47,6 +47,7 @@
 
           home-manager.sharedModules = [
             inputs.nixcord.homeManagerModules.nixcord
+            home-manager.nixosModules.gtk
           ];
         }
 
