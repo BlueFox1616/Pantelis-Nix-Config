@@ -1,7 +1,7 @@
 { pkgs, config, ... }: {
 
   imports = [
-    ./bundle.nix
+    ./modules/bundle.nix
   ];
 
   home-manager.users.pantelis = {
