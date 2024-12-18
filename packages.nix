@@ -56,5 +56,8 @@
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.battery-time
+    pkgs.gnomeExtensions.pano
+    pkgs.gnomeExtensions.search-light
+    pkgs.gnomeExtensions.media-controls
   ];
 }
