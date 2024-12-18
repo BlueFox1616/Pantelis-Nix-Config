@@ -22,6 +22,7 @@
         "pano@elhan.io"
         "rounded-window-corners@fxgn"
         "panel-corners@aunetx"
+        "gsconnect@andyholmes.github.io"
       ];
     };
   };
