@@ -29,6 +29,7 @@
     pkgs.qbittorrent
     pkgs.lutris
     pkgs.stremio
+    pkgs.gradience
     #Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
@@ -59,6 +60,7 @@
     pkgs.gnomeExtensions.media-controls
     pkgs.gnomeExtensions.rounded-window-corners-reborn
     pkgs.gnomeExtensions.panel-corners
-    pkgs.gradience
+    
+    gnomeExtensions.dynamic-panel
   ];
 }
