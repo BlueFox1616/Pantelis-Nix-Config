@@ -49,7 +49,6 @@
     pkgs.gnomeExtensions.dash2dock-lite
     pkgs.gnomeExtensions.compiz-alike-magic-lamp-effect
     pkgs.gnomeExtensions.compiz-windows-effect
-    pkgs.gnomeExtensions.panel-corners
     pkgs.gnomeExtensions.fullscreen-to-empty-workspace
     pkgs.gnomeExtensions.logo-menu
     pkgs.gnomeExtensions.just-perfection
@@ -58,5 +57,6 @@
     pkgs.gnomeExtensions.battery-time
     pkgs.gnomeExtensions.pano
     pkgs.gnomeExtensions.media-controls
+    pkgs.gnomeExtensions.rounded-window-corners-reborn
   ];
 }
