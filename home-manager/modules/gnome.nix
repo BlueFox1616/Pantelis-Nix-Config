@@ -20,6 +20,7 @@
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "mediacontrols@cliffniff.github.com"
         "pano@elhan.io"
+        "rounded-window-corners@fxgn"
       ];
     };
   };
