@@ -14,5 +14,12 @@
   home.packages = with pkgs; [
     neofetch
   ];
+
+  # Enable GTK with WhiteSur theme
+  programs.gtk.enable = true;
+  programs.gtk.theme = {
+    name = "WhiteSur";
+    package = pkgs.whitesur-gtk-theme;
+  };
 }
 
