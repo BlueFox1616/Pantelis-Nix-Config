@@ -14,10 +14,6 @@
   home.packages = with pkgs; [
     neofetch
   ];
-
-  # Enable GTK
-  gtk = {
-    enable = true;
   };
 }
 
