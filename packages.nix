@@ -73,6 +73,7 @@
     pkgs.gnomeExtensions.rounded-window-corners-reborn
     pkgs.gnomeExtensions.panel-corners
     pkgs.gnomeExtensions.gsconnect
+    pkgs.gnomeExtensions.wallpaper-slideshow
   ];
 }
 
