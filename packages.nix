@@ -41,6 +41,7 @@
     pkgs.lutris
     pkgs.stremio
     pkgs.gradience
+    pkgs.gearlever
     # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
