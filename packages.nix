@@ -74,6 +74,7 @@
     pkgs.gnomeExtensions.panel-corners
     pkgs.gnomeExtensions.gsconnect
     pkgs.gnomeExtensions.wallpaper-slideshow
+    pkgs.gnomeExtensions.bluetooth-battery-meter
   ];
 }
 
