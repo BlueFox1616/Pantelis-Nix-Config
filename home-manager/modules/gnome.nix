@@ -24,6 +24,7 @@
         "panel-corners@aunetx"
         "gsconnect@andyholmes.github.io"
         "azwallpaper@azwallpaper.gitlab.com"
+        "Bluetooth-Battery-Meter@maniacx.github.com"
       ];
     };
   };
