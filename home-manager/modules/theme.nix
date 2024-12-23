@@ -9,7 +9,7 @@
     enable = true;
 
     cursorTheme = {
-      name = "WhiteSur-cursors";
+      name = "WhiteSur";
       package = pkgs.whitesur-cursors;
       size = 32;
     };
