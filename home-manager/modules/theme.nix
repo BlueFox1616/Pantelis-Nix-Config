@@ -5,7 +5,7 @@
     enable = true;
 
     cursorTheme = {
-      name = "WhiteSur";
+      name = "WhiteSur-cursors";
       package = pkgs.whitesur-cursors;
       size = 32;
     };
