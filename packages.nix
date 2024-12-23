@@ -54,7 +54,7 @@
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-cursors
     pkgs.inotify-tools
-    pkgs.p7zip
+    pkgs.libsForQt5.qtstyleplugin-kvantum
     # Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
     pkgs.gnomeExtensions.freon
