@@ -9,7 +9,7 @@
     enable = true;
 
     cursorTheme = {
-      name = "macOS";
+      name = "WhiteSur-cursors";
       package = pkgs.whitesur-cursors;
       size = 32;
     };
