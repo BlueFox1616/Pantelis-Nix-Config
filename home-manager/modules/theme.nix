@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 
 {
   gtk = {
@@ -22,23 +18,6 @@
     theme = {
       name = "WhiteSur-Dark";
     };
-  };
-
-  qt = {
-    enable = true;
-
-    platformTheme.name = "qt5ct";
-
-    style.name = "kvantum";
-  };
-
-  xdg.configFile = {
-    "Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=WhiteSurDark
-    '';
-
-    "Kvantum/WhiteSur".source = "${pkgs.whitesur-kde}/share/Kvantum/WhiteSur";
   };
 
   home.activation = {
