@@ -4,7 +4,7 @@
      #./spicetify.nix
      ./nixcord.nix
      ./gnome.nix
-     ./theme.nix
+     #./theme.nix
 
   
   ];
