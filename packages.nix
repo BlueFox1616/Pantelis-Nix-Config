@@ -42,6 +42,7 @@
     pkgs.stremio
     pkgs.gradience
     pkgs.gearlever
+    pkgs.obsidian
     # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
@@ -74,7 +75,7 @@
     pkgs.gnomeExtensions.gsconnect
     pkgs.gnomeExtensions.wallpaper-slideshow
     pkgs.gnomeExtensions.bluetooth-battery-meter
-    pkgs.gnomeExtensions.hide-top-bar
+    
   ];
 }
 
