@@ -11,6 +11,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,7 +24,7 @@
     gitwatch.url = "github:gitwatch/gitwatch";  # Add this line for Gitwatch
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, gitwatch, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, gitwatch, ghostty, ... }@inputs:
 
   let
     system = "x86_64-linux";
