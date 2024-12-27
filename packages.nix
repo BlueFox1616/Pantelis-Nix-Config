@@ -55,6 +55,7 @@
     pkgs.whitesur-gtk-theme
     pkgs.whitesur-cursors
     pkgs.inotify-tools
+    pkgs.fastfetch
     # Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
     pkgs.gnomeExtensions.freon
