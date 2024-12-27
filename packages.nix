@@ -43,7 +43,7 @@
     pkgs.gradience
     pkgs.gearlever
     pkgs.obsidian
-    ghostty.packages.x86_64-linux.default
+    inputs.ghostty.packages.x86_64-linux.default
     # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
