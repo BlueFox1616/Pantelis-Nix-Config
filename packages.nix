@@ -56,7 +56,7 @@
     pkgs.inotify-tools
     pkgs.fastfetch
     pkgs.btop
-    pkgs.nerdfonts
+    nerd-fonts.geist-mono
     # Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
     pkgs.gnomeExtensions.freon
