@@ -16,9 +16,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowBroken = true;
-  services.foldingathome.enable = true;
   nixpkgs.config.allowUnfree = true;
-  programs.hyprland.enable = true; # enable Hyprland
+  zramSwap.enable = true;
 
   programs.steam = {
     enable = true;
