@@ -56,8 +56,8 @@
     pkgs.inotify-tools
     pkgs.fastfetch
     pkgs.btop
-    # Integrating Geist Mono font with Nerd Fonts
-    (nerdfonts.override { fonts = [ "GeistMono" ]; })
+    # Integrating Geist Mono font directly from nerd-fonts
+    pkgs.nerd-fonts.geist-mono
     # Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
     pkgs.gnomeExtensions.freon
