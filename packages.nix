@@ -56,7 +56,8 @@
     pkgs.inotify-tools
     pkgs.fastfetch
     pkgs.btop
-    nerd-fonts.geist-mono
+    # Integrating Geist Mono font with Nerd Fonts
+    (nerdfonts.override { fonts = [ "GeistMono" ]; })
     # Gnome Extensions
     pkgs.gnomeExtensions.pip-on-top    
     pkgs.gnomeExtensions.freon
@@ -77,7 +78,6 @@
     pkgs.gnomeExtensions.gsconnect
     pkgs.gnomeExtensions.wallpaper-slideshow
     pkgs.gnomeExtensions.bluetooth-battery-meter
-    
   ];
 }
 
