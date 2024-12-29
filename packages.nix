@@ -34,7 +34,7 @@
     pkgs.bottles
     pkgs.libreoffice-qt6-fresh
     pkgs.git
-    inputs.zen-browser.packages."${system}"
+    inputs.zen-browser.packages."${system}".default
     pkgs.localsend
     pkgs.qbittorrent
     pkgs.lutris
