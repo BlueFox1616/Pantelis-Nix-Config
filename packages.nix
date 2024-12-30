@@ -27,7 +27,8 @@
   };
 
   # List packages installed in system profile. 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with import inputs.nixpkgs { inherit system; }; [
+
     # Gui Apps
     pkgs.gnome-tweaks
     pkgs.gnome-software
