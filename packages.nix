@@ -31,7 +31,7 @@
     # Gui Apps
     pkgs.gnome-tweaks
     pkgs.gnome-software
-    pkgs.bottles
+    #pkgs.bottles
     pkgs.libreoffice-qt6-fresh
     pkgs.git
     inputs.zen-browser.packages."${system}".default
