@@ -10,7 +10,7 @@
       "nixpkgs"
       "-L" # Print build logs
     ];
-    dates = "02:00"; # Scheduled time for upgrades
+    dates = "03:00"; # Scheduled time for upgrades
     randomizedDelaySec = "45min"; # Randomized delay to avoid simultaneous updates
   };
 }
