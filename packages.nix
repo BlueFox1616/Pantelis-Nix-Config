@@ -42,6 +42,7 @@
     pkgs.gradience
     pkgs.gearlever
     pkgs.obsidian
+    pkgs.ghostty
     # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
