@@ -71,7 +71,7 @@
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.battery-time
-    pkgs.gnomeExtensions.pano
+    #pkgs.gnomeExtensions.pano
     pkgs.gnomeExtensions.media-controls
     pkgs.gnomeExtensions.rounded-window-corners-reborn
     pkgs.gnomeExtensions.panel-corners
