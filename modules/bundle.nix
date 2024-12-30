@@ -7,6 +7,7 @@
     ./xserver.nix
     ./spicetify.nix
     ./git.nix
+    ./upgrade.nix
   ];
 }
 
