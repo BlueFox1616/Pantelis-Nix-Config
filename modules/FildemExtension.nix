@@ -8,7 +8,7 @@ buildGnomeExtension {
     owner = "Sominemo";
     repo = "Fildem-Gnome-45";
     rev = "master"; # or the correct tag name
-    sha256 = "sha256-placeholder"; # Update with the correct hash
+    sha256 = "1q1ya3grc4hhgcrwj782v39h5bb47848pracwfxr2raq22gmrsdi"; # Update with the correct hash
   };
 
   meta = with lib; {
