@@ -19,6 +19,7 @@
   nixpkgs.config.allowUnfree = true;
   zramSwap.enable = true;
   programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   programs.steam = {
     enable = true;
