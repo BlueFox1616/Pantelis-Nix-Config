@@ -1,4 +1,4 @@
-{ lib, fetchFromGitHub, gnome3, ...}:
+{ lib, fetchFromGitHub, buildGnomeExtension, ...}:
 
 buildGnomeExtension {
   pname = "fildem-gnome-45";
