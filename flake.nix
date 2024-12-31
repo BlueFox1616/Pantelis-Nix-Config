@@ -31,7 +31,8 @@
 
     # Import the Fildem extension Nix expression
     fildem-extension = pkgs.callPackage ./FildemExtension.nix {
-      inherit (pkgs) lib fetchFromGitHub gnome3;
+      inherit (pkgs) lib fetchFromGitHub;
+      buildGnomeExtension = gnome3.buildGnomeExtension;  # Pass the buildGnomeExtension function explicitly
     };
   in
   {
