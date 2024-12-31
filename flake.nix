@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gitwatch.url = "github:gitwatch/gitwatch";  # Add this line for Gitwatch
+    gitwatch.url = "github:gitwatch/gitwatch";
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, gitwatch, ... }@inputs:
@@ -28,7 +28,11 @@
       inherit system;
       config.allowUnfree = true;
     };
-    fildem-extension = pkgs.callPackage ./FildemExtension.nix {inherit (pkgs) lib fetchFromGitHub buildGnomeExtension};
+
+    # Import Fildem GNOME extension
+    fildem-extension = pkgs.callPackage ./FildemExtension.nix {
+      inherit (pkgs) lib fetchFromGitHub buildGnomeExtension;
+    };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -52,8 +56,8 @@
             inputs.nixcord.homeManagerModules.nixcord
           ];
 
-          # Add Fildem GNOME Extension
-          programs.gnome.extensions = {
+          # Add GNOME extension configuration
+          programs.gnome = {
             enable = true;
             extensions = [ fildem-extension ];
           };
@@ -63,10 +67,19 @@
         {
           services.gitwatch.my-service-name = {
             enable = true;
-            path = "/etc/nixos";  # Adjust the path as needed
-            remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";  # Adjust with your repository URL
-            user = "pantelis";  # The user to run the service under
+            path = "/etc/nixos";
+            remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";
+            user = "pantelis";
             branch = "main";
+          };
+        }
+
+        # Enable GNOME desktop environment
+        {
+          services.xserver = {
+            enable = true;
+            desktopManager.gnome.enable = true;
+            displayManager.gdm.enable = true;
           };
         }
       ];
