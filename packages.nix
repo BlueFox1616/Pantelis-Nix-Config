@@ -31,11 +31,11 @@
     # Gui Apps
     pkgs.gnome-tweaks
     pkgs.gnome-software
-    #pkgs.bottles
+    pkgs.bottles
     pkgs.libreoffice-qt6-fresh
     pkgs.git
     inputs.zen-browser.packages."${system}".beta
-    inputs.zen-browser.packages."${system}".twilight
+    #inputs.zen-browser.packages."${system}".twilight
     pkgs.localsend
     pkgs.qbittorrent
     pkgs.lutris
@@ -73,7 +73,7 @@
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.battery-time
-    #pkgs.gnomeExtensions.pano
+    pkgs.gnomeExtensions.pano
     pkgs.gnomeExtensions.media-controls
     pkgs.gnomeExtensions.rounded-window-corners-reborn
     pkgs.gnomeExtensions.panel-corners
