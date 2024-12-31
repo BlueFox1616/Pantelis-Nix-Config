@@ -28,7 +28,7 @@
       inherit system;
       config.allowUnfree = true;
     };
-    fildem-extension = pkgs.callPackage ./FildemExtension.nix {};
+    fildem-extension = pkgs.callPackage ./FildemExtension.nix {inherit (pkgs) lib fetchFromGitHub buildGnomeExtension};
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
