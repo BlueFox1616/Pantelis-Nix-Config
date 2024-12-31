@@ -17,23 +17,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gitwatch.url = "github:gitwatch/gitwatch";
+    gitwatch.url = "github:gitwatch/gitwatch";  # Add this line for Gitwatch
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, gitwatch, ... }@inputs:
 
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    pkgs = import nixpkgs { inherit system; };
 
-    # Import Fildem GNOME extension
+    # Import gnome3 (which contains buildGnomeExtension)
+    gnome3 = pkgs.gnome3;
+
+    # Import the Fildem extension Nix expression
     fildem-extension = pkgs.callPackage ./FildemExtension.nix {
-      inherit (pkgs) lib fetchFromGitHub buildGnomeExtension;
+      inherit (pkgs) lib fetchFromGitHub gnome3;
     };
-  in {
+  in
+  {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {
@@ -67,9 +68,9 @@
         {
           services.gitwatch.my-service-name = {
             enable = true;
-            path = "/etc/nixos";
-            remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";
-            user = "pantelis";
+            path = "/etc/nixos";  # Adjust path as needed
+            remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";  # Adjust with your repo URL
+            user = "pantelis";  # User to run service under
             branch = "main";
           };
         }
