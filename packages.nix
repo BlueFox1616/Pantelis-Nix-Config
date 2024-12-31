@@ -18,6 +18,7 @@
   nixpkgs.config.allowBroken = true;
   nixpkgs.config.allowUnfree = true;
   zramSwap.enable = true;
+  programs.zsh.enable = true;
 
   programs.steam = {
     enable = true;
