@@ -11,7 +11,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -25,10 +24,13 @@
 
   let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    fildem-extension = pkgs.callPackage ./FildemExtension.nix {};
   in {
-    # nixos - system hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {
           inherit system;
@@ -49,11 +51,17 @@
           home-manager.sharedModules = [
             inputs.nixcord.homeManagerModules.nixcord
           ];
+
+          # Add Fildem GNOME Extension
+          programs.gnome.extensions = {
+            enable = true;
+            extensions = [ fildem-extension ];
+          };
         }
 
         # Enable gitwatch as a service
         {
-          services.gitwatch.my-service-name = {  # Replace 'my-service-name' with your actual service name
+          services.gitwatch.my-service-name = {
             enable = true;
             path = "/etc/nixos";  # Adjust the path as needed
             remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";  # Adjust with your repository URL
