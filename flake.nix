@@ -21,22 +21,17 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, gitwatch, ... }@inputs:
-
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
 
-    # Import gnome3 (which contains buildGnomeExtension)
-    #gnome3 = pkgs.gnome3;
-
-    # Import the Fildem extension Nix expression
-    #fildem-extension = pkgs.callPackage ./FildemExtension.nix {
-     # inherit (pkgs) lib fetchFromGitHub;
-      #buildGnomeExtension = gnome3.buildGnomeExtension;  # Pass the buildGnomeExtension function explicitly
-    #};
+    # Import the Fildem extension Nix expression if required
+    # fildem-extension = pkgs.callPackage ./FildemExtension.nix {};
   in
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {
           inherit system;
@@ -58,12 +53,12 @@
             inputs.nixcord.homeManagerModules.nixcord
           ];
 
-          # Add GNOME extension configuration
-          #programs.gnome = {
-           # enable = true;
-            #extensions = [ fildem-extension ];
-          #};
-        #}
+          # Uncomment and configure if using GNOME extensions
+          # programs.gnome = {
+          #   enable = true;
+          #   extensions = [ fildem-extension ];
+          # };
+        }
 
         # Enable gitwatch as a service
         {
@@ -73,9 +68,6 @@
             remote = "git@github.com:BlueFox1616/Pantelis-Nix-Config";  # Adjust with your repo URL
             user = "pantelis";  # User to run service under
             branch = "main";
-          };
-        }
-
           };
         }
       ];
