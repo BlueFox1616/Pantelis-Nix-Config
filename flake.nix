@@ -27,12 +27,12 @@
     pkgs = import nixpkgs { inherit system; };
 
     # Import gnome3 (which contains buildGnomeExtension)
-    gnome3 = pkgs.gnome3;
+    #gnome3 = pkgs.gnome3;
 
     # Import the Fildem extension Nix expression
-    fildem-extension = pkgs.callPackage ./FildemExtension.nix {
-      inherit (pkgs) lib fetchFromGitHub;
-      buildGnomeExtension = gnome3.buildGnomeExtension;  # Pass the buildGnomeExtension function explicitly
+    #fildem-extension = pkgs.callPackage ./FildemExtension.nix {
+     # inherit (pkgs) lib fetchFromGitHub;
+      #buildGnomeExtension = gnome3.buildGnomeExtension;  # Pass the buildGnomeExtension function explicitly
     };
   in
   {
@@ -59,11 +59,11 @@
           ];
 
           # Add GNOME extension configuration
-          programs.gnome = {
-            enable = true;
-            extensions = [ fildem-extension ];
-          };
-        }
+          #programs.gnome = {
+           # enable = true;
+            #extensions = [ fildem-extension ];
+          #};
+        #}
 
         # Enable gitwatch as a service
         {
@@ -76,12 +76,6 @@
           };
         }
 
-        # Enable GNOME desktop environment
-        {
-          services.xserver = {
-            enable = true;
-            desktopManager.gnome.enable = true;
-            displayManager.gdm.enable = true;
           };
         }
       ];
