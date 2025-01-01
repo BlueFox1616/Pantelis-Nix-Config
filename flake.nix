@@ -33,7 +33,7 @@
     #fildem-extension = pkgs.callPackage ./FildemExtension.nix {
      # inherit (pkgs) lib fetchFromGitHub;
       #buildGnomeExtension = gnome3.buildGnomeExtension;  # Pass the buildGnomeExtension function explicitly
-    };
+    #};
   in
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
