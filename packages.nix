@@ -39,7 +39,7 @@
     inputs.zen-browser.packages."${system}".beta
     inputs.zen-browser.packages."${system}".twilight
     pkgs.localsend
-    pkgs.qbittorrent
+    pkgs.fragments
     pkgs.lutris
     pkgs.stremio
     pkgs.gradience
@@ -60,7 +60,7 @@
     pkgs.inotify-tools
     pkgs.fastfetch
     pkgs.btop
-    pkgs.fragments
+   
     # Integrating Geist Mono font directly from nerd-fonts
     pkgs.nerd-fonts.geist-mono
     # Gnome Extensions
