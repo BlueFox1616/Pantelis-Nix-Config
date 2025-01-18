@@ -46,7 +46,7 @@
     pkgs.gearlever
     pkgs.obsidian
     pkgs.ghostty
-    pkgs.minecraft
+    pkgs.prismlauncher
     # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
