@@ -47,7 +47,6 @@
     pkgs.obsidian
     pkgs.ghostty
     pkgs.prismlauncher
-    pkgs.modrinth-app-unwrapped
     # Other
     pkgs.imagemagick
     pkgs.whitesur-icon-theme    
